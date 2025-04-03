@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mayhap"
-version = "0.1.0"
+version = "0.2.0"
 description = "Where your functions may happen... or not. Embrace the uncertainty in your code execution!"
 readme = "README.md"
 requires-python = ">=3.11"
