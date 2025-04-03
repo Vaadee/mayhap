@@ -21,13 +21,14 @@ DISTRIBUTIONS = {
 }
 
 
-def maybe(distribution="uniform", **params):
+def maybe(distribution="uniform", verbose=True, **params):
     """
     Decorator that decides whether to execute the decorated function
     based on a specified probability distribution.
 
     Parameters:
         distribution (str): The type of distribution to use.
+        verbose (bool): If True, prints a message when the function does not execute.
         **params: Parameters specific to the chosen distribution.
 
     Returns:
@@ -46,9 +47,9 @@ def maybe(distribution="uniform", **params):
             execute = dist_func(**params)
             if execute:
                 return func(*args, **kwargs)
-            else:
+            elif verbose:
                 print(f"{func.__name__} did not execute.")
-                return None
+            return None
 
         return wrapper
 

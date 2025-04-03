@@ -1,18 +1,26 @@
-# Mayhap
+# **Mayhap**
 
-**Mayhap**: Where your functions may happen... or not. Embrace the uncertainty in your code execution!
+**Mayhap**: Where your functions *may* happen... or *not*.  
+Embrace the uncertainty in your code execution!
 
-## Overview
+---
 
-**Mayhap** is a whimsical Python package that allows you to introduce controlled randomness into your function executions. By decorating your functions with `@maybe`, you can specify various probability distributions to determine whether a function should execute or not. It's perfect for simulations, testing, or just adding a bit of unpredictability to your code.
+## **Overview**
 
-## Features
+Mayhap is a whimsical Python package that allows you to introduce controlled randomness into your function executions. By decorating your functions with `@maybe`, you can specify various probability distributions to determine whether a function should execute or not. It's perfect for simulations, testing, or just adding a bit of unpredictability to your code.
+
+---
+
+## **Features**
 
 - **Multiple Distributions**: Choose from uniform, weighted, normal, exponential, Bernoulli distributions, or define your own custom logic.
 - **Easy Integration**: Simply decorate your functions with `@maybe` and specify the desired distribution and parameters.
 - **Flexible Probability Control**: Tailor the execution probability to fit your specific needs.
+- **Optional Verbosity**: Control whether skipped executions print a message with the `verbose` flag.
 
-## Installation
+---
+
+## **Installation**
 
 Install Mayhap using pip:
 
@@ -20,11 +28,13 @@ Install Mayhap using pip:
 pip install mayhap
 ```
 
-## Usage
+---
+
+## **Usage**
 
 Here's how you can use Mayhap in your projects:
 
-### Uniform Distribution
+### **Uniform Distribution**
 
 Execute a function with a fixed probability.
 
@@ -38,7 +48,7 @@ def greet(name):
 greet('Alice')  # Has a 70% chance to print the greeting.
 ```
 
-### Weighted Distribution
+### **Weighted Distribution**
 
 Assign different weights to execution outcomes.
 
@@ -50,7 +60,7 @@ def farewell(name):
 farewell('Bob')  # 'Goodbye, Bob!' is three times more likely to print than not.
 ```
 
-### Normal Distribution
+### **Normal Distribution**
 
 Execution probability follows a normal (Gaussian) distribution.
 
@@ -62,7 +72,7 @@ def announce(event):
 announce('the event')  # Execution probability is centered around 50%.
 ```
 
-### Exponential Distribution
+### **Exponential Distribution**
 
 Execution probability decreases exponentially over time.
 
@@ -74,7 +84,7 @@ def notify(user):
 notify('Charlie')  # Execution probability decreases over time.
 ```
 
-### Bernoulli Distribution
+### **Bernoulli Distribution**
 
 Execute based on a Bernoulli trial with probability `p`.
 
@@ -86,7 +96,7 @@ def alert():
 alert()  # Has a 30% chance to trigger the alert.
 ```
 
-### Custom Probability Function
+### **Custom Probability Function**
 
 Define your own logic for execution probability.
 
@@ -102,14 +112,29 @@ def process():
 process()  # Executes based on custom logic.
 ```
 
-## Contributing
+### **Controlling Verbosity**
 
-Contributions are welcome! If you'd like to improve Mayhap or add new features, please fork the repository and submit a pull request. For major changes, open an issue first to discuss your ideas.
+You can control whether skipped function calls print a message with the `verbose` flag.
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+```python
+@maybe(distribution='uniform', probability=0.5, verbose=False)
+def silent():
+    print("Might run... but won't explain if not.")
+```
 
 ---
 
-*Mayhap: Embrace the uncertainty in your code execution!*
+## **Contributing**
+
+Contributions are welcome! If you'd like to improve Mayhap or add new features, please fork the repository and submit a pull request. For major changes, open an issue first to discuss your ideas.
+
+---
+
+## **License**
+
+This project is licensed under the **GPL-3.0-only License**.  
+See the `LICENSE` file for more details.
+
+---
+
+**Mayhap**: Embrace the uncertainty in your code execution!
